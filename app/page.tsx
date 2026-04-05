@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#C4A77D] text-[#1a1a1a]">
       {/* Hero Section */}
-      <section className="min-h-screen flex flex-col items-center justify-center px-6 py-12">
+      <section className="min-h-[80vh] flex flex-col items-center justify-center px-6 py-12">
         {/* Logo */}
         <div className="w-32 h-32 md:w-40 md:h-40 rounded-full bg-[#2D4A3E] flex items-center justify-center mb-8">
           <div className="text-center text-white">
@@ -22,14 +22,8 @@ export default function Home() {
         </p>
         
         <p className="text-xl md:text-2xl italic text-[#2D4A3E] text-center mb-8 max-w-md">
-          Great coffee, fresh food, and a warm welcome.
+          Decent food, good coffee, everyone welcome.
         </p>
-
-        <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-8 max-w-lg text-center mb-8">
-          <h2 className="text-2xl md:text-3xl font-semibold mb-4">
-            We&apos;ve been busy - come and see the changes!
-          </h2>
-        </div>
 
         {/* Menu Link */}
         <Link 
@@ -40,7 +34,7 @@ export default function Home() {
         </Link>
 
         {/* Social Links */}
-        <div className="flex gap-6 mb-12">
+        <div className="flex gap-6">
           <a 
             href="https://facebook.com/noshcafebar" 
             target="_blank" 
@@ -83,6 +77,28 @@ export default function Home() {
         </div>
       </section>
 
+      {/* About Matt Section */}
+      <section className="py-16 px-6 bg-white/20">
+        <div className="max-w-2xl mx-auto text-center">
+          <h2 className="text-3xl font-serif mb-6">A Quick Hello</h2>
+          <div className="text-lg text-[#3d3d3d] space-y-4 leading-relaxed">
+            <p>
+              I&apos;m Matt. I&apos;ve loved living in Medstead, and now having the chance to serve you lot is absolutely brilliant.
+            </p>
+            <p>
+              Still finding my feet with all this café-owning stuff — it&apos;s been a steep learning curve. But my goal is simple: build a place I&apos;d actually want to visit. Decent food, good drinks, and everyone feels welcome.
+            </p>
+            <p className="italic text-[#2D4A3E]">
+              My South African roots mean I&apos;ll be cooking outside on a braai sooner or later, beer in hand.
+            </p>
+            <p>
+              Looking forward to welcoming you (and your dogs) to Nosh.
+            </p>
+            <p className="font-semibold mt-6">— Matt</p>
+          </div>
+        </div>
+      </section>
+
       {/* Info Section */}
       <section className="bg-[#2D4A3E] text-white py-16 px-6">
         <div className="max-w-4xl mx-auto">
@@ -104,6 +120,9 @@ export default function Home() {
                   <span>9:00am - 3:00pm</span>
                 </div>
               </div>
+              <p className="mt-6 text-sm text-[#8a9f95]">
+                Dogs welcome
+              </p>
             </div>
 
             {/* Location */}
@@ -127,22 +146,22 @@ export default function Home() {
         </div>
       </section>
 
-      {/* What We Offer Section */}
+      {/* What's On Offer */}
       <section className="py-16 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-serif mb-8">What We Offer</h2>
+          <h2 className="text-3xl font-serif mb-8">What We&apos;re Serving</h2>
           <div className="grid sm:grid-cols-3 gap-8">
             <div className="bg-white/30 rounded-xl p-6">
               <h3 className="text-xl font-semibold mb-2">Coffee</h3>
-              <p className="text-[#3d3d3d]">Freshly roasted beans, expertly crafted</p>
+              <p className="text-[#3d3d3d]">Freshly roasted, properly made</p>
             </div>
             <div className="bg-white/30 rounded-xl p-6">
-              <h3 className="text-xl font-semibold mb-2">Fresh Food</h3>
-              <p className="text-[#3d3d3d]">Homemade sandwiches, salads & hot dishes</p>
+              <h3 className="text-xl font-semibold mb-2">Food</h3>
+              <p className="text-[#3d3d3d]">Homemade, honest grub — with some South African favourites</p>
             </div>
             <div className="bg-white/30 rounded-xl p-6">
-              <h3 className="text-xl font-semibold mb-2">Cakes & Treats</h3>
-              <p className="text-[#3d3d3d]">Delicious homemade cakes daily</p>
+              <h3 className="text-xl font-semibold mb-2">Cakes</h3>
+              <p className="text-[#3d3d3d]">Baked fresh, gone by lunchtime</p>
             </div>
           </div>
           
@@ -158,7 +177,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-[#2D4A3E] text-white py-8 px-6 text-center">
         <p className="text-[#C4A77D]">
-          © {new Date().getFullYear()} Nosh Cafe Bar. All rights reserved.
+          © {new Date().getFullYear()} Nosh Cafe Bar
         </p>
         <p className="text-sm mt-2 text-[#8a9f95]">
           24 Lymington Bottom Road, Medstead, Alton, Hampshire
