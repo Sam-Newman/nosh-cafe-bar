@@ -35,7 +35,7 @@ export default function Book() {
       <header className="py-8 px-6 text-center">
         <Link href="/" className="inline-block">
           <Image 
-            src="/logo.jpg" 
+            src="/logo.webp" 
             alt="Nosh Cafe Bar" 
             width={80} 
             height={80}

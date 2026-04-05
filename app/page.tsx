@@ -8,7 +8,7 @@ export default function Home() {
       <section className="min-h-[80vh] flex flex-col items-center justify-center px-6 py-12">
         {/* Logo */}
         <Image 
-          src="/logo.jpg" 
+          src="/logo.webp" 
           alt="Nosh Cafe Bar" 
           width={160} 
           height={160}
