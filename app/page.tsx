@@ -28,13 +28,21 @@ export default function Home() {
           Decent food, good coffee, everyone welcome.
         </p>
 
-        {/* Menu Link */}
-        <Link 
-          href="/menu"
-          className="bg-[#2D4A3E] text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-[#1d3a2e] transition-colors mb-12"
-        >
-          View Our Menu
-        </Link>
+        {/* Action Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 mb-12">
+          <Link 
+            href="/menu"
+            className="bg-[#2D4A3E] text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-[#1d3a2e] transition-colors text-center"
+          >
+            View Our Menu
+          </Link>
+          <Link 
+            href="/book"
+            className="bg-white/80 text-[#2D4A3E] px-8 py-4 rounded-full text-lg font-medium hover:bg-white transition-colors text-center"
+          >
+            Book a Table
+          </Link>
+        </div>
 
         {/* Social Links */}
         <div className="flex gap-6">
