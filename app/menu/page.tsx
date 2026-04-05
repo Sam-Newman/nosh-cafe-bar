@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Menu() {
   return (
@@ -6,12 +7,13 @@ export default function Menu() {
       {/* Header */}
       <header className="py-8 px-6 text-center">
         <Link href="/" className="inline-block">
-          <div className="w-20 h-20 rounded-full bg-[#2D4A3E] flex items-center justify-center mx-auto mb-4">
-            <div className="text-center text-white">
-              <span className="text-xl font-serif italic">Nosh</span>
-              <div className="text-[8px] tracking-[0.2em] uppercase">Café & Bar</div>
-            </div>
-          </div>
+          <Image 
+            src="/logo.jpg" 
+            alt="Nosh Cafe Bar" 
+            width={80} 
+            height={80}
+            className="w-20 h-20 rounded-full mx-auto mb-4"
+          />
         </Link>
         <h1 className="text-3xl md:text-4xl font-serif">All Day Menu</h1>
       </header>

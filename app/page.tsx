@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -6,12 +7,14 @@ export default function Home() {
       {/* Hero Section */}
       <section className="min-h-[80vh] flex flex-col items-center justify-center px-6 py-12">
         {/* Logo */}
-        <div className="w-32 h-32 md:w-40 md:h-40 rounded-full bg-[#2D4A3E] flex items-center justify-center mb-8">
-          <div className="text-center text-white">
-            <span className="text-3xl md:text-4xl font-serif italic">Nosh</span>
-            <div className="text-[10px] md:text-xs tracking-[0.3em] uppercase mt-1">Café & Bar</div>
-          </div>
-        </div>
+        <Image 
+          src="/logo.jpg" 
+          alt="Nosh Cafe Bar" 
+          width={160} 
+          height={160}
+          className="w-32 h-32 md:w-40 md:h-40 rounded-full mb-8"
+          priority
+        />
         
         <h1 className="text-4xl md:text-5xl font-serif text-center mb-4">
           Nosh Cafe Bar
