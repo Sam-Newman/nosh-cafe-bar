@@ -25,11 +25,19 @@ export default function Home() {
           Great coffee, fresh food, and a warm welcome.
         </p>
 
-        <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-8 max-w-lg text-center mb-12">
+        <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-8 max-w-lg text-center mb-8">
           <h2 className="text-2xl md:text-3xl font-semibold mb-4">
             We&apos;ve been busy - come and see the changes!
           </h2>
         </div>
+
+        {/* Menu Link */}
+        <Link 
+          href="/menu"
+          className="bg-[#2D4A3E] text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-[#1d3a2e] transition-colors mb-12"
+        >
+          View Our Menu
+        </Link>
 
         {/* Social Links */}
         <div className="flex gap-6 mb-12">
@@ -112,34 +120,38 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="inline-block mt-4 text-white underline hover:text-[#C4A77D] transition-colors"
               >
-                Get Directions →
+                Get Directions
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Menu Preview */}
+      {/* What We Offer Section */}
       <section className="py-16 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-serif mb-8">What We Offer</h2>
           <div className="grid sm:grid-cols-3 gap-8">
             <div className="bg-white/30 rounded-xl p-6">
-              <span className="text-4xl mb-4 block">☕</span>
               <h3 className="text-xl font-semibold mb-2">Coffee</h3>
               <p className="text-[#3d3d3d]">Freshly roasted beans, expertly crafted</p>
             </div>
             <div className="bg-white/30 rounded-xl p-6">
-              <span className="text-4xl mb-4 block">🥪</span>
               <h3 className="text-xl font-semibold mb-2">Fresh Food</h3>
               <p className="text-[#3d3d3d]">Homemade sandwiches, salads & hot dishes</p>
             </div>
             <div className="bg-white/30 rounded-xl p-6">
-              <span className="text-4xl mb-4 block">🍰</span>
               <h3 className="text-xl font-semibold mb-2">Cakes & Treats</h3>
               <p className="text-[#3d3d3d]">Delicious homemade cakes daily</p>
             </div>
           </div>
+          
+          <Link 
+            href="/menu"
+            className="inline-block mt-8 text-[#2D4A3E] font-medium underline hover:no-underline"
+          >
+            See Full Menu
+          </Link>
         </div>
       </section>
 
