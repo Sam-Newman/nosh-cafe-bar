@@ -89,7 +89,7 @@ export default function Home() {
       </header>
 
       {/* Hero Section with Image */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative h-screen flex items-end justify-center pb-24 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image 
@@ -97,7 +97,6 @@ export default function Home() {
             alt="Nosh Cafe Bar interior" 
             fill
             className="object-cover"
-            style={{ objectPosition: 'center 30%' }}
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-[#C4A77D]" />
