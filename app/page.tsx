@@ -44,7 +44,7 @@ export default function Home() {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled 
             ? 'bg-[#2D4A3E] shadow-lg py-3' 
-            : 'bg-transparent py-6'
+            : 'bg-transparent py-4'
         }`}
       >
         <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
@@ -53,18 +53,14 @@ export default function Home() {
             <Image 
               src="/logo.webp" 
               alt="Nosh Cafe Bar" 
-              width={48} 
-              height={48}
-              className={`rounded-full transition-all duration-300 ${
-                scrolled ? 'w-10 h-10' : 'w-12 h-12'
-              }`}
+              width={40} 
+              height={40}
+              className="w-10 h-10 rounded-full"
             />
           </Link>
 
           {/* Navigation */}
-          <nav className={`hidden sm:flex items-center gap-8 transition-colors duration-300 ${
-            scrolled ? 'text-white' : 'text-white'
-          }`}>
+          <nav className="hidden sm:flex items-center gap-8 text-white">
             <Link href="/menu" className="hover:text-[#C4A77D] transition-colors">
               Menu
             </Link>
@@ -89,31 +85,31 @@ export default function Home() {
       </header>
 
       {/* Hero Section with Image */}
-      <section className="relative h-screen flex flex-col justify-between py-12 overflow-hidden">
+      <section className="relative h-screen flex flex-col overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image 
             src="/hero.jpg" 
             alt="Nosh Cafe Bar interior" 
             fill
-            className="object-cover"
+            className="object-cover object-center"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-[#C4A77D]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-[#C4A77D]" />
         </div>
 
-        {/* Top Tagline - above the Nosh sign */}
-        <div className="relative z-10 text-center px-6 pt-24 md:pt-32">
-          <p className="text-xl md:text-2xl text-white/90 animate-fade-in">
+        {/* Top Tagline - positioned in upper third */}
+        <div className="relative z-10 text-center px-6 pt-28 md:pt-36">
+          <p className="text-xl md:text-2xl text-white animate-fade-in drop-shadow-lg">
             Independent café in Four Marks, Hampshire
           </p>
         </div>
 
-        {/* Spacer for the Nosh sign in the image */}
-        <div className="flex-grow min-h-[30vh] md:min-h-[35vh]" />
+        {/* Spacer pushes buttons to bottom */}
+        <div className="flex-1" />
 
         {/* Bottom CTA Buttons */}
-        <div className="relative z-10 text-center px-6">
+        <div className="relative z-10 text-center px-6 pb-20 md:pb-16">
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-delay-1">
             <Link 
               href="/menu"
@@ -128,13 +124,13 @@ export default function Home() {
               Book a Table
             </Link>
           </div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <svg className="w-6 h-6 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
+          
+          {/* Scroll Indicator */}
+          <div className="mt-8 animate-bounce">
+            <svg className="w-6 h-6 text-[#2D4A3E]/60 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </div>
         </div>
       </section>
 

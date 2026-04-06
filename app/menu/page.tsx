@@ -5,28 +5,28 @@ export default function Menu() {
   return (
     <main className="min-h-screen bg-[#C4A77D] text-[#1a1a1a]">
       {/* Navigation Header */}
-      <header className="bg-[#2D4A3E] py-4">
+      <header className="bg-[#2D4A3E] py-3">
         <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
           <Link href="/">
             <Image 
               src="/logo.webp" 
               alt="Nosh Cafe Bar" 
-              width={48} 
-              height={48}
+              width={40} 
+              height={40}
               className="w-10 h-10 rounded-full"
             />
           </Link>
-          <nav className="flex items-center gap-6 text-white">
+          <nav className="flex items-center gap-8 text-white">
             <Link href="/menu" className="text-[#C4A77D]">Menu</Link>
             <Link href="/book" className="hover:text-[#C4A77D] transition-colors">Book</Link>
-            <a href="/#about" className="hover:text-[#C4A77D] transition-colors hidden sm:inline">About</a>
-            <a href="/#contact" className="hover:text-[#C4A77D] transition-colors hidden sm:inline">Contact</a>
+            <a href="/#about" className="hover:text-[#C4A77D] transition-colors hidden sm:block">About</a>
+            <a href="/#contact" className="hover:text-[#C4A77D] transition-colors hidden sm:block">Contact</a>
           </nav>
         </div>
       </header>
 
       {/* Page Title */}
-      <div className="py-8 px-6 text-center">
+      <div className="py-10 px-6 text-center">
         <h1 className="text-3xl md:text-4xl font-serif">All Day Menu</h1>
       </div>
 
