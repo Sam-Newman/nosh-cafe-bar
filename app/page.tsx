@@ -205,7 +205,7 @@ export default function Home() {
             </svg>
           </a>
           <a 
-            href="https://instagram.com/noshcafebar" 
+            href="https://instagram.com/nosh_cafe_bar" 
             target="_blank" 
             rel="noopener noreferrer"
             className="w-14 h-14 rounded-full bg-[#2D4A3E] flex items-center justify-center text-white hover:bg-[#1d3a2e] transition-all hover:scale-110"
