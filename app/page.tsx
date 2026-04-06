@@ -89,7 +89,7 @@ export default function Home() {
       </header>
 
       {/* Hero Section with Image */}
-      <section className="relative h-screen flex items-end justify-center pb-24 overflow-hidden">
+      <section className="relative h-screen flex items-end justify-center pb-12 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image 
@@ -104,15 +104,11 @@ export default function Home() {
 
         {/* Hero Content */}
         <div className="relative z-10 text-center px-6">
-          <p className="text-xl md:text-2xl text-white/90 mb-4 animate-fade-in">
+          <p className="text-xl md:text-2xl text-white/90 mb-8 animate-fade-in">
             Independent café in Four Marks, Hampshire
           </p>
 
-          <p className="text-2xl md:text-3xl italic text-[#C4A77D] mb-10 animate-fade-in-delay-1">
-            Great coffee, fresh food, and a warm welcome.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-delay-2">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-delay-1">
             <Link 
               href="/menu"
               className="bg-[#2D4A3E] text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-[#1d3a2e] transition-all hover:scale-105"
