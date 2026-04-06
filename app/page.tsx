@@ -103,14 +103,14 @@ export default function Home() {
         </div>
 
         {/* Top Tagline - above the Nosh sign */}
-        <div className="relative z-10 text-center px-6 pt-20">
+        <div className="relative z-10 text-center px-6 pt-24 md:pt-32">
           <p className="text-xl md:text-2xl text-white/90 animate-fade-in">
             Independent café in Four Marks, Hampshire
           </p>
         </div>
 
         {/* Spacer for the Nosh sign in the image */}
-        <div className="flex-1" />
+        <div className="flex-grow min-h-[30vh] md:min-h-[35vh]" />
 
         {/* Bottom CTA Buttons */}
         <div className="relative z-10 text-center px-6">

@@ -8,20 +8,32 @@ export default function Book() {
   
   return (
     <main className="min-h-screen bg-[#C4A77D] text-[#1a1a1a]">
-      {/* Header */}
-      <header className="py-8 px-6 text-center">
-        <Link href="/" className="inline-block">
-          <Image 
-            src="/logo.webp" 
-            alt="Nosh Cafe Bar" 
-            width={80} 
-            height={80}
-            className="w-20 h-20 rounded-full mx-auto mb-4"
-          />
-        </Link>
+      {/* Navigation Header */}
+      <header className="bg-[#2D4A3E] py-4">
+        <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
+          <Link href="/">
+            <Image 
+              src="/logo.webp" 
+              alt="Nosh Cafe Bar" 
+              width={48} 
+              height={48}
+              className="w-10 h-10 rounded-full"
+            />
+          </Link>
+          <nav className="flex items-center gap-6 text-white">
+            <Link href="/menu" className="hover:text-[#C4A77D] transition-colors">Menu</Link>
+            <Link href="/book" className="text-[#C4A77D]">Book</Link>
+            <a href="/#about" className="hover:text-[#C4A77D] transition-colors hidden sm:inline">About</a>
+            <a href="/#contact" className="hover:text-[#C4A77D] transition-colors hidden sm:inline">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      {/* Page Title */}
+      <div className="py-8 px-6 text-center">
         <h1 className="text-3xl md:text-4xl font-serif">Book a Table</h1>
         <p className="text-[#3d3d3d] mt-2">Reserve your spot at Nosh</p>
-      </header>
+      </div>
 
       {/* OpenTable Widget */}
       <section className="max-w-md mx-auto px-6 pb-16">
@@ -70,15 +82,6 @@ export default function Book() {
           Walk-ins always welcome
         </p>
 
-        {/* Back Link */}
-        <div className="text-center mt-8">
-          <Link 
-            href="/" 
-            className="text-[#2D4A3E] hover:underline"
-          >
-            ← Back to Home
-          </Link>
-        </div>
       </section>
 
       {/* Footer */}
