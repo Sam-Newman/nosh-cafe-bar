@@ -96,14 +96,15 @@ export default function Home() {
             src="/hero.jpg" 
             alt="Nosh Cafe Bar interior" 
             fill
-            className="object-cover object-top"
+            className="object-cover"
+            style={{ objectPosition: 'center 30%' }}
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-[#C4A77D]" />
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 text-center px-6 mt-20">
+        <div className="relative z-10 text-center px-6">
           <p className="text-xl md:text-2xl text-white/90 mb-4 animate-fade-in">
             Independent café in Four Marks, Hampshire
           </p>
