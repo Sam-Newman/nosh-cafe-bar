@@ -89,7 +89,7 @@ export default function Home() {
       </header>
 
       {/* Hero Section with Image */}
-      <section className="relative h-screen flex items-end justify-center pb-12 overflow-hidden">
+      <section className="relative h-screen flex flex-col justify-between py-12 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image 
@@ -102,12 +102,18 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-[#C4A77D]" />
         </div>
 
-        {/* Hero Content */}
-        <div className="relative z-10 text-center px-6">
-          <p className="text-xl md:text-2xl text-white/90 mb-8 animate-fade-in">
+        {/* Top Tagline - above the Nosh sign */}
+        <div className="relative z-10 text-center px-6 pt-20">
+          <p className="text-xl md:text-2xl text-white/90 animate-fade-in">
             Independent café in Four Marks, Hampshire
           </p>
+        </div>
 
+        {/* Spacer for the Nosh sign in the image */}
+        <div className="flex-1" />
+
+        {/* Bottom CTA Buttons */}
+        <div className="relative z-10 text-center px-6">
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-delay-1">
             <Link 
               href="/menu"
