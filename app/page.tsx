@@ -49,21 +49,16 @@ export default function Home() {
       >
         <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3">
+          <Link href="/">
             <Image 
               src="/logo.webp" 
-              alt="Nosh" 
+              alt="Nosh Cafe Bar" 
               width={48} 
               height={48}
               className={`rounded-full transition-all duration-300 ${
                 scrolled ? 'w-10 h-10' : 'w-12 h-12'
               }`}
             />
-            <span className={`font-serif text-xl transition-colors duration-300 ${
-              scrolled ? 'text-white' : 'text-white'
-            }`}>
-              Nosh
-            </span>
           </Link>
 
           {/* Navigation */}
@@ -101,27 +96,23 @@ export default function Home() {
             src="/hero.jpg" 
             alt="Nosh Cafe Bar interior" 
             fill
-            className="object-cover"
+            className="object-cover object-top"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-[#C4A77D]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-[#C4A77D]" />
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 text-center px-6 mt-16">
-          <h1 className="text-5xl md:text-7xl font-serif text-white mb-4 animate-fade-in">
-            Nosh Cafe Bar
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-white/90 mb-4 animate-fade-in-delay-1">
+        <div className="relative z-10 text-center px-6 mt-20">
+          <p className="text-xl md:text-2xl text-white/90 mb-4 animate-fade-in">
             Independent café in Four Marks, Hampshire
           </p>
 
-          <p className="text-lg md:text-xl italic text-[#C4A77D] mb-10 animate-fade-in-delay-2">
+          <p className="text-2xl md:text-3xl italic text-[#C4A77D] mb-10 animate-fade-in-delay-1">
             Great coffee, fresh food, and a warm welcome.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-delay-3">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-delay-2">
             <Link 
               href="/menu"
               className="bg-[#2D4A3E] text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-[#1d3a2e] transition-all hover:scale-105"
