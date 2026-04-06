@@ -2,12 +2,14 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function Home() {
   const observerRef = useRef<IntersectionObserver | null>(null);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
+    // Scroll animations
     observerRef.current = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -23,11 +25,74 @@ export default function Home() {
       observerRef.current?.observe(el);
     });
 
-    return () => observerRef.current?.disconnect();
+    // Scroll detection for header
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 100);
+    };
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      observerRef.current?.disconnect();
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   return (
     <main className="min-h-screen bg-[#C4A77D] text-[#1a1a1a]">
+      {/* Fixed Header - appears on scroll */}
+      <header 
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          scrolled 
+            ? 'bg-[#2D4A3E] shadow-lg py-3' 
+            : 'bg-transparent py-6'
+        }`}
+      >
+        <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-3">
+            <Image 
+              src="/logo.webp" 
+              alt="Nosh" 
+              width={48} 
+              height={48}
+              className={`rounded-full transition-all duration-300 ${
+                scrolled ? 'w-10 h-10' : 'w-12 h-12'
+              }`}
+            />
+            <span className={`font-serif text-xl transition-colors duration-300 ${
+              scrolled ? 'text-white' : 'text-white'
+            }`}>
+              Nosh
+            </span>
+          </Link>
+
+          {/* Navigation */}
+          <nav className={`hidden sm:flex items-center gap-8 transition-colors duration-300 ${
+            scrolled ? 'text-white' : 'text-white'
+          }`}>
+            <Link href="/menu" className="hover:text-[#C4A77D] transition-colors">
+              Menu
+            </Link>
+            <Link href="/book" className="hover:text-[#C4A77D] transition-colors">
+              Book
+            </Link>
+            <a href="#about" className="hover:text-[#C4A77D] transition-colors">
+              About
+            </a>
+            <a href="#contact" className="hover:text-[#C4A77D] transition-colors">
+              Contact
+            </a>
+          </nav>
+
+          {/* Mobile menu button */}
+          <button className="sm:hidden text-white p-2" aria-label="Menu">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </header>
+
       {/* Hero Section with Image */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image */}
@@ -39,26 +104,21 @@ export default function Home() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-[#C4A77D]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-[#C4A77D]" />
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 text-center px-6">
-          <Image 
-            src="/logo.webp" 
-            alt="Nosh Cafe Bar" 
-            width={180} 
-            height={180}
-            className="w-36 h-36 md:w-44 md:h-44 rounded-full mx-auto mb-8 shadow-2xl animate-fade-in"
-            priority
-          />
-          
-          <h1 className="text-4xl md:text-6xl font-serif text-white mb-4 animate-fade-in-delay-1">
+        <div className="relative z-10 text-center px-6 mt-16">
+          <h1 className="text-5xl md:text-7xl font-serif text-white mb-4 animate-fade-in">
             Nosh Cafe Bar
           </h1>
           
-          <p className="text-lg md:text-xl text-white/90 mb-8 animate-fade-in-delay-2">
+          <p className="text-xl md:text-2xl text-white/90 mb-4 animate-fade-in-delay-1">
             Independent café in Four Marks, Hampshire
+          </p>
+
+          <p className="text-lg md:text-xl italic text-[#C4A77D] mb-10 animate-fade-in-delay-2">
+            Great coffee, fresh food, and a warm welcome.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-delay-3">
@@ -85,15 +145,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Tagline Section */}
-      <section className="py-20 px-6 text-center">
-        <p className="fade-up text-2xl md:text-4xl italic text-[#2D4A3E] max-w-2xl mx-auto leading-relaxed">
-          &ldquo;Great coffee, fresh food, and a warm welcome.&rdquo;
-        </p>
-      </section>
-
       {/* About Matt Section */}
-      <section className="py-16 px-6 bg-white/20">
+      <section id="about" className="py-20 px-6 bg-white/20">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="fade-up text-3xl font-serif mb-8">A Quick Hello</h2>
           <div className="fade-up text-lg text-[#3d3d3d] space-y-4 leading-relaxed">
@@ -143,7 +196,7 @@ export default function Home() {
       </section>
 
       {/* Info Section */}
-      <section className="bg-[#2D4A3E] text-white py-20 px-6">
+      <section id="contact" className="bg-[#2D4A3E] text-white py-20 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12">
             {/* Opening Hours */}
