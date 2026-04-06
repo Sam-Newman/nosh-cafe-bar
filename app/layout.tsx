@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const playfair = Playfair_Display({ 
@@ -24,6 +25,9 @@ export const metadata: Metadata = {
   },
 };
 
+// Replace with actual Elfsight widget ID after setup
+const ELFSIGHT_WIDGET_ID = "YOUR_WIDGET_ID";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -31,7 +35,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased">
+        {children}
+        {/* Elfsight Instagram Widget - free tier available */}
+        <Script 
+          src={`https://static.elfsight.com/platform/platform.js`}
+          strategy="lazyOnload"
+        />
+      </body>
     </html>
   );
 }

@@ -189,9 +189,35 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Instagram Feed */}
+      <section className="py-16 px-6">
+        <div className="max-w-4xl mx-auto">
+          <h3 className="fade-up text-2xl font-serif text-center mb-8">@nosh_cafe_bar</h3>
+          
+          {/* Elfsight Instagram Feed Widget */}
+          <div className="fade-up elfsight-app-instagram-feed" data-elfsight-app-lazy></div>
+          
+          {/* Fallback link */}
+          <div className="text-center mt-8">
+            <a 
+              href="https://instagram.com/nosh_cafe_bar" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-[#2D4A3E] font-medium hover:underline"
+            >
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" strokeWidth="2"/>
+                <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" strokeWidth="2"/>
+                <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/>
+              </svg>
+              Follow us on Instagram
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Social Links */}
-      <section className="py-16 px-6 text-center">
-        <h3 className="fade-up text-xl font-serif mb-6">Follow Along</h3>
+      <section className="py-12 px-6 text-center bg-white/20">
         <div className="fade-up flex justify-center gap-6">
           <a 
             href="https://facebook.com/noshcafebar" 
